@@ -40,7 +40,9 @@ namespace LanuagePhonetic
                 {"z", "zed" }
             };
 
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("-----------------------\nFrench phonetic speller\n-----------------------");
+            Console.ResetColor();
             
             string word = "";
             string phoneticSpelling = "";
@@ -51,23 +53,26 @@ namespace LanuagePhonetic
                 word = Console.ReadLine().ToLower();
                 phoneticSpelling = "";
 
-                foreach (char character in word)
+                if (word != "q")
                 {
-                    for (int i = 0; i < letters.GetLength(0); i++)
+                    foreach (char character in word)
                     {
-                        if (Char.Parse(letters[i, 0]) == character)
+                        for (int i = 0; i < letters.GetLength(0); i++)
                         {
-                            phoneticSpelling += letters[i, 1];
-
-                            if (character != word.Last())
+                            if (Char.Parse(letters[i, 0]) == character)
                             {
-                                phoneticSpelling += "-";
+                                phoneticSpelling += letters[i, 1];
+
+                                if (character != word.Last())
+                                {
+                                    phoneticSpelling += "-";
+                                }
                             }
                         }
                     }
-                }
 
-                Console.WriteLine(phoneticSpelling + "\n");
+                    Console.WriteLine(phoneticSpelling + "\n");
+                }
             }
 
             Console.ReadLine();
