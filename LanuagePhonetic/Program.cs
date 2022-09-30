@@ -37,7 +37,7 @@ namespace LanuagePhonetic
                 {"w", "doob-leh-vay" },
                 {"x", "eeks" },
                 {"y", "ee-grek" },
-                {"z", "zed" },
+                {"z", "zed" }
             };
 
             Console.WriteLine("-----------------------\nFrench phonetic speller\n-----------------------");
